@@ -21,7 +21,7 @@ fun maximumSumSubArrayBruteForce(arr: IntArray, k: Int): Int {
         for (j in i until (i + k)) {
             winSum += arr[j]
         }
-        if (maxSum < winSum) maxSum = winSum
+        maxSum = max(maxSum, winSum)
     }
     return maxSum
 }
