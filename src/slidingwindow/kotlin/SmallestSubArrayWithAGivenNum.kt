@@ -39,15 +39,18 @@ fun smallestSubArrayWithGivenNumber(arr: IntArray, s: Int): Int {
 }
 
 fun main() {
+    println("expected output = 2")
     println(measureTimeMillis("smallestSubArrayWithGivenNumber took ") {
-        smallestSubArrayWithGivenNumber(intArrayOf(2, 1, 5, 2, 3, 2), 7)
+        "output = " + smallestSubArrayWithGivenNumber(intArrayOf(2, 1, 5, 2, 3, 2), 7)
     })
-
+    println("============================================================")
+    println("expected output = 1")
     println(measureTimeMillis("smallestSubArrayWithGivenNumber took ") {
-        smallestSubArrayWithGivenNumber(intArrayOf(2, 1, 5, 2, 8), 7)
+        "output = " + smallestSubArrayWithGivenNumber(intArrayOf(2, 1, 5, 2, 8), 7)
     })
-
+    println("============================================================")
+    println("expected output = 3")
     println(measureTimeMillis("smallestSubArrayWithGivenNumber took ") {
-        smallestSubArrayWithGivenNumber(intArrayOf(3, 4, 1, 1, 6), 8)
+        "output = " + smallestSubArrayWithGivenNumber(intArrayOf(3, 4, 1, 1, 6), 8)
     })
 }

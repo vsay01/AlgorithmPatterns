@@ -38,8 +38,8 @@ fun longestSubStringWithNoMoreThanK(str: String, k: Int): Int {
         //shrink the window from beginning if count distinct char in hashmap > k
         //decrease count of that char if its value > 1
         //remove that char if its value <= 1
-        val currentStartChar = str[windowStart]
-        if (hashMap.size > k) {
+        while (hashMap.size > k) {
+            val currentStartChar = str[windowStart]
             hashMap[currentStartChar]?.let {
                 if (it <= 1) {
                     hashMap.remove(currentStartChar)
@@ -48,11 +48,10 @@ fun longestSubStringWithNoMoreThanK(str: String, k: Int): Int {
                 }
             }
             windowStart++
-        } else {
-            //longestLen is tracked by comparing current longestLen with
-            //the value of elements in current hashmap
-            longestLen = max(longestLen, hashMap.map { it.value }.sum())
         }
+        //longestLen is tracked by comparing current longestLen with
+        //the value of elements in current hashmap
+        longestLen = max(longestLen, hashMap.map { it.value }.sum())
     }
     return longestLen
 }
@@ -61,16 +60,18 @@ fun longestSubStringWithNoMoreThanK(str: String, k: Int): Int {
 //https://www.geeksforgeeks.org/kotlin-hashmap/
 //https://www.bezkoder.com/kotlin-sum-sumby-sumbydouble-bigdecimal-list-map-example/
 fun main() {
-    //expected output = 4
+    println("expected output = 4")
     println(measureTimeMillis("longestSubStringWithNoMoreThanK took ") {
-        longestSubStringWithNoMoreThanK("araaci", 2)
+        "output = " + longestSubStringWithNoMoreThanK("araaci", 2)
     })
-    //expected output = 2
+    println("============================================================")
+    println("expected output = 2")
     println(measureTimeMillis("longestSubStringWithNoMoreThanK took ") {
-        longestSubStringWithNoMoreThanK("araaci", 1)
+        "output = " + longestSubStringWithNoMoreThanK("araaci", 1)
     })
-    //expected output = 5
+    println("============================================================")
+    println("expected output = 5")
     println(measureTimeMillis("longestSubStringWithNoMoreThanK took ") {
-        longestSubStringWithNoMoreThanK("cbbebi", 3)
+        "output = " + longestSubStringWithNoMoreThanK("cbbebi", 3)
     })
 }

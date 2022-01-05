@@ -47,17 +47,23 @@ fun maximumSumSubArraySlideWindow(arr: IntArray, k: Int): Int {
 }
 
 fun main() {
+    println("expected output = 9")
     println(measureTimeMillis("maximumSumSubArrayBruteForce took ") {
-        maximumSumSubArrayBruteForce(intArrayOf(2, 1, 5, 1, 3, 2), 3)
+        "output = " + maximumSumSubArrayBruteForce(intArrayOf(2, 1, 5, 1, 3, 2), 3)
     })
+    println("============================================================")
+    println("expected output = 7")
     println(measureTimeMillis("maximumSumSubArrayBruteForce took ") {
-        maximumSumSubArrayBruteForce(intArrayOf(2, 3, 4, 1, 5), 2)
+        "output = " + maximumSumSubArrayBruteForce(intArrayOf(2, 3, 4, 1, 5), 2)
     })
-
+    println("============================================================")
+    println("expected output = 9")
     println(measureTimeMillis("maximumSumSubArraySlideWindow took ") {
-        maximumSumSubArraySlideWindow(intArrayOf(2, 1, 5, 1, 3, 2), 3)
+        "output = " + maximumSumSubArraySlideWindow(intArrayOf(2, 1, 5, 1, 3, 2), 3)
     })
+    println("============================================================")
+    println("expected output = 7")
     println(measureTimeMillis("maximumSumSubArraySlideWindow took ") {
-        maximumSumSubArraySlideWindow(intArrayOf(2, 3, 4, 1, 5), 2)
+        "output = " + maximumSumSubArraySlideWindow(intArrayOf(2, 3, 4, 1, 5), 2)
     })
 }

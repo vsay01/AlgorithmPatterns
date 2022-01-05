@@ -50,11 +50,13 @@ fun averageSubArraySlideWindow(arr: IntArray, k: Int): DoubleArray {
 * Rang = https://kotlinlang.org/docs/ranges.html#range
 * */
 fun main() {
-    println(measureTimeMillis("averageSubArrayBruteForce took ") {
+    println("expected output = [2.2, 2.8, 2.4, 3.6, 2.8]")
+    println("output = " + measureTimeMillis("averageSubArrayBruteForce took ") {
         averageSubArrayBruteForce(intArrayOf(1, 3, 2, 6, -1, 4, 1, 8, 2), 5)
     }.contentToString())
-
-    println(measureTimeMillis("averageSubArraySlideWindow took ") {
+    println("============================================================")
+    println("expected output = [2.2, 2.8, 2.4, 3.6, 2.8]")
+    println("output = " + measureTimeMillis("averageSubArraySlideWindow took ") {
         averageSubArraySlideWindow(intArrayOf(1, 3, 2, 6, -1, 4, 1, 8, 2), 5)
     }.contentToString())
 }
